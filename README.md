@@ -1,1 +1,1 @@
-"# getsExamen" 
+"# getsExamens" 
