@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listes</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <table class="table">
+            <legend>Etudiant</legend>
+            <tr class="table-success">
+                <th class="table-success">ID</th>
+                <th class="table-success">NOM</th>
+                <th class="table-success">PRENOM</th>
+                <th class="table-success">ORIGINE SCOLAIRE</th>
+                
+            </tr>
+            {% for listerEtudiant in lister_etudiant %}
+                <tr class="table-success">
+                    <td class="table-secondary">{{listerEtudiant.idEtudiant}}</td>
+                    <td class="table-secondary">{{listerEtudiant.nom}}</td>
+                    <td class="table-secondary">{{listerEtudiant.prenom}}</td>
+                    <td class="table-secondary">{{listerEtudiant.origineScolaire}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <hr>
+        <br><br><br>
+        <table class="table">
+            <legend>Programme</legend>
+            <tr class="table-success">
+                <th class="table-success">ID</th>
+                <th class="table-success">ID Etudiant</th>
+                <th class="table-success">Libelle</th>
+                <th class="table-success">Annee</th>
+                
+            </tr>
+            {% for listerProgramme in lister_programme %}
+                <tr class="table-success">
+                    <td class="table-secondary">{{listerProgramme.idProgramme}}</td>
+                    <td class="table-secondary">{{listerProgramme.idEtudiant}}</td>
+                    <td class="table-secondary">{{listerProgramme.libelle}}</td>
+                    <td class="table-secondary">{{listerProgramme.annee}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <hr>
+        <br><br><br>
+        <table class="table">
+            <legend>Projet</legend>
+            <tr class="table-success">
+                <th class="table-success">ID</th>
+                <th class="table-success">ID Etudiant</th>
+                <th class="table-success">Libelle</th>
+                
+            </tr>
+            {% for listerProjet in lister_projet %}
+                <tr class="table-success">
+                    <td class="table-secondary">{{listerProjet.idProgramme}}</td>
+                    <td class="table-secondary">{{listerProjet.idEtudiant}}</td>
+                    <td class="table-secondary">{{listerProjet.libelle}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <hr>
+        <br><br><br>
+        <table class="table">
+            <legend>Matiere</legend>
+            <tr class="table-success">
+                <th class="table-success">ID</th>
+                <th class="table-success">ID Etudiant</th>
+                <th class="table-success">ID Projet</th>
+                <th class="table-success">Nom</th>
+                <th class="table-success">Objectif</th>
+                
+            </tr>
+            {% for listerMatiere in lister_matiere %}
+                <tr class="table-success">
+                    <td class="table-secondary">{{listerMatiere.idMatiere}}</td>
+                    <td class="table-secondary">{{listerMatiere.idEtudiant}}</td>
+                    <td class="table-secondary">{{listerMatiere.idProjet}}</td>
+                    <td class="table-secondary">{{listerMatiere.nom}}</td>
+                    <td class="table-secondary">{{listerMatiere.objectif}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <hr>
+        <br><br><br>
+        <table class="table">
+            <legend>Programme et Matiere</legend>
+            <tr class="table-success">
+                <th class="table-success">ID</th>
+                <th class="table-success">ID Programme</th>
+                <th class="table-success">ID Matiere</th>
+                
+            </tr>
+            {% for listerProgrammeMatiere in lister_programme_matiere %}
+                <tr class="table-success">
+                    <td class="table-secondary">{{listerProgrammeMatiere.idProgrammeMatiere}}</td>
+                    <td class="table-secondary">{{listerProgrammeMatiere.idProgramme}}</td>
+                    <td class="table-secondary">{{listerProgrammeMatiere.idMatiere}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
